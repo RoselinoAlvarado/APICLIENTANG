@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ListarComponent } from './cliente/listar/listar.component';
+import { NovoComponent } from './cliente/novo/novo.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'APICLIENT-ANG';
+  title = '';
+
+  constructor(private router:Router){}
+
+  Listar(){
+    this.router.navigate(["listar"]);
+  }
+  Novo(){
+    this.router.navigate(["novo"]);
+  }
 }
